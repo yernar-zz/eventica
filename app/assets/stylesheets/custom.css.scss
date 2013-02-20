@@ -1,0 +1,96 @@
+@import "bootstrap";
+
+body{
+  background: #f8f6f7;
+  height: 100%;
+}
+
+/*Main content section*/
+
+.adlist{
+  margin-left: -20px;
+}
+.event-unit{
+  position: relative;
+  max-width: 500px;
+  margin-left: 20px;
+}
+
+.e-date{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: -63px;
+  vertical-align: top;
+}
+
+.e-date strong{
+  display: block;
+  text-transform: uppercase;
+}
+
+.e-divider{
+  margin-left: -63px;
+}
+
+.content{
+  background: white;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.25);
+}
+
+.container{
+  width: 980px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+.push,
+.footer {
+  height: 60px;
+}
+.footer {
+  padding-top: 4em;
+  color: #888;
+  background-color: #171717;
+}
+
+.footer p{
+  display: inline-block;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  .footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper.container {
+  width: auto;
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */

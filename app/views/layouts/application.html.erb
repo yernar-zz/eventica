@@ -7,8 +7,50 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="wrap">
+		<div class="navbar-wrapper">
+			<div class = "container">
+				<div class="navbar navbar-inverse">
+					<div class="navbar-inner">
+						<div class="container">
+							<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</a>
+							<%= link_to "Eventica", '#', class: "brand" %>
+							<div class="nav-collapse collapse">
+								<ul class="nav">
+									<li><%= link_to "События", '#events' %></li>
+									<li><%= link_to "Шаги", '#steps' %></li>
+									<li><%= link_to "О Нас", '#about' %></li>
+									<li><%= link_to "Контакты", '#contact' %></li>
+								</ul>
+								<div class="nav pull-right">
+									<%= link_to "Регистрация", '#register', class: "btn btn-primary" %>
+									<%= link_to "Вход", '#about', class: "btn btn-success" %>
+								</div>
+							</div><!--/.nav-collapse -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<%= yield %>
+		<div class="container content">
+			<%= yield %>
+		</div> <!-- /container -->
+
+		<div class="push"></div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+			<p>&copy; Eventica 2013</p>
+			<p class="pull-right">All rights are reserved</p>
+		</div>
+	</footer>
+
+
 
 </body>
 </html>
