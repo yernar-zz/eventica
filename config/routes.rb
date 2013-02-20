@@ -1,7 +1,9 @@
 Eventica::Application.routes.draw do
-  get "static_pages/home"
+  root to: 'static_pages#home'
 
-  get "static_pages/help"
+  match '/steps', to: 'static_pages#steps'
+  match '/about', to: 'static_pages#about'
+  match '/contacts', to: 'static_pages#contacts'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
