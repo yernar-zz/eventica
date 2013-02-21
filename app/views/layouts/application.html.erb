@@ -8,14 +8,17 @@
   <%= render 'layouts/shim' %>
 </head>
 <body>
-	<div class="wrap">
+	<div id="wrap">
 		<%= render 'layouts/header' %>
 
 		<div class="container content">
+			<% flash.each do |key, value| %>
+				<%= content_tag(:div, value, class: "alert alert-#{key}") %>
+			<% end %>
 			<%= yield %>
 		</div> <!-- /container -->
 
-		<div class="push"></div>
+		<div id="push"></div>
 	</div>
 	<%= render 'layouts/footer' %>
 
