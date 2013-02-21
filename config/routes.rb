@@ -1,5 +1,9 @@
 Eventica::Application.routes.draw do
+  get "users/new"
+
   root to: 'static_pages#home'
+
+  match '/signup', to: 'users#new'
 
   match '/steps', to: 'static_pages#steps'
   match '/about', to: 'static_pages#about'
