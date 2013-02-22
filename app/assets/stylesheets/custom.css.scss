@@ -41,7 +41,6 @@ html, body{
 .content{
   background: white;
   box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.25);
-  padding: 10px;
 }
 
 .container{
@@ -61,11 +60,11 @@ html, body{
 }
 
 /* Set the fixed height of the footer here */
-#push,
-#footer {
-  height: 30px;
+#push {
+  height: 90px;
 }
 #footer {
+  height: 30px;
   padding-top: 30px;
   color: #888;
   background-color: #171717;
