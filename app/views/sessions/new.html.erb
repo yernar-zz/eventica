@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="span6 offset3">
+		<h1>Авторизация</h1>
+		<%= form_for(:session, url: sessions_path) do |f| %>
+			<%= f.text_field :email, class: "input-block-level", placeholder: "Электронный адрес"%>
+			<%= f.password_field :password, class: "input-block-level", placeholder: "Пароль"%>
+
+			<%= f.submit"Sign in", class: "btn btn-large btn-primary" %>
+
+		<% end %>
+
+		<p>Новый пользователь? <%= link_to "Зарегестрируйся!", signup_path %></p>
+	</div>
+	
+</div>

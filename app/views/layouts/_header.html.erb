@@ -17,8 +17,24 @@
 							<li><%= link_to "Контакты", contacts_path %></li>
 						</ul>
 						<div class="nav pull-right">
-							<%= link_to "Регистрация", signup_path, class: "btn btn-primary" %>
-							<%= link_to "Вход", '#about', class: "btn btn-success" %>
+							<% if signed_in? %>
+								<ul>
+									<li><%= link_to "Users", '#' %></li>
+									<li id="fat-menu" class="dropdown">
+										<a href="#" class="dropdown-toogle" data-toogle="dropdown">Аккаунт <b class="caret"></b></a>
+									</li>
+									<ul>
+										<li><%= link_to "Профиль", current_user %></li>
+										<li><%= link_to "Настройки", '#' %></li>
+										<li class="divider"></li>
+										<li><%= link_to "Выход", signout_path, method: "delete" %></li>
+									</ul>
+								</ul>
+							<% else %>
+								<%= link_to "Регистрация", signup_path, class: "btn btn-primary" %>
+								<%= link_to "Вход", '#about', class: "btn btn-success" %>
+							<% end %>
+
 						</div>
 					</div><!--/.nav-collapse -->
 				</div>
