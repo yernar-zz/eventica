@@ -1,5 +1,6 @@
 Eventica::Application.routes.draw do
-  resources :users
+  
+  resources :events, :users
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
@@ -11,6 +12,12 @@ Eventica::Application.routes.draw do
   match '/steps', to: 'static_pages#steps'
   match '/about', to: 'static_pages#about'
   match '/contacts', to: 'static_pages#contacts'
+
+  match '/create', to: 'events#new'
+
+  match '/myevents', to: 'users#show'
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

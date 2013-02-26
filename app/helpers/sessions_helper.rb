@@ -1,7 +1,7 @@
 module SessionsHelper
 	def sign_in(user)
 		cookies[:remember_token] = {value: user.remember_token, 
-									expires: 2.minutes.from_now.utc }
+									expires: 24.hours.from_now.utc }
 		self.current_user = user		
 	end
 
@@ -21,4 +21,13 @@ module SessionsHelper
   		self.current_user = nil
   		cookies.delete(:remember_token)
   	end
+
+    def signed_in_user
+      unless signed_in?
+        store_location
+        redirect_to signin_url, notice: "Please sign in"
+        
+      end
+      
+    end
 end

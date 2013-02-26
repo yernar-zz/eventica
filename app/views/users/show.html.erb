@@ -1,10 +1,22 @@
 <div class="row">
-	<aside class="span4">
+	<aside class="span4 offset1">
 		<section>
 			<h1>
 				<%= gravatar_for @user %>
 				<%= @user.name %>
 			</h1>
+			<%= link_to "Новое событие", create_path %>
 		</section>
 	</aside>
+</div>
+<div class = "row">
+	<div class = "span4 offset1">
+		<% if @user.events.any? %>
+			<h3>События (<%= @user.events.count %>)</h3> 
+			<ul class = "events">
+				<%= render @events %>
+			</ul>
+			<%= will_paginate @events %>
+		<% end %>
+	</div>
 </div>

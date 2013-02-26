@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])
+    if current_user
+      @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
+    @events = @user.events.paginate(page: params[:page])
   end
 
   def create
