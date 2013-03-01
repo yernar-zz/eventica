@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+  def index
+    @events = Event.order(:title)
+  end
 
   def create
     @event = current_user.events.build(params[:event])
@@ -24,11 +27,11 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.json
   def new
-    @event = Event.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @event }
+    if signed_in?
+      @event = Event.new
+    else
+      flash.now[:error] = "You need to sign in"
+      redirect_to signin_path
     end
   end
 

@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+  	@events = Event.order(:title)
   end
 
   def steps

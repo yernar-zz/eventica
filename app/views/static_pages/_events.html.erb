@@ -1,0 +1,15 @@
+
+<div class="event-list span8 offset1">
+    <% @events.each do |event| %>
+      <div class="event-unit">
+        <div class = "e-date">
+          <strong><%= event.date.strftime("%^a") %></strong>
+          <%= event.date.strftime("%b%-d").downcase.to_s %>
+        </div>
+        <h4><%= link_to event.title, event %></h4>
+        <p><%= event.description %></p>
+      </div>
+      <hr class="e-divider">
+    <% end %>
+</div>
+

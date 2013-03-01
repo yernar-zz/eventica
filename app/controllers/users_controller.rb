@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   def new
+    if signed_in?
+      flash.now[:success] = "You are logged in"
+      redirect_to current_user
+    end
   	@user = User.new
   end
 
@@ -13,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(params[:user])
+    @user = User.new(params[:user])
   	if @user.save
       sign_in @user
   		flash[:success] = "Welcome to the Eventr! Here you can create your own events"
