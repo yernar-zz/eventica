@@ -10,7 +10,8 @@ class EventsController < ApplicationController
       flash[:success] = "Event created!"
       redirect_to current_user
     else
-      render 'static_pages/home'      
+      flash.now[:error] = "Event was not created created!"
+      render :new     
     end
   end
   # GET /events/1

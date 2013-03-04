@@ -15,13 +15,16 @@
     <%= f.text_field :title %>
 
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
 
     <%= f.label :venue %><br />
     <%= f.text_field :venue %>
 
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date, :order =>[:day, :month, :year] %>
+
+        <%= f.label :end_date %><br />
+    <%= f.date_select :end_date, class: "datetime-select" %>
 
     <%= f.submit class: "btn btn-large btn-primary" %>
 <% end %>
